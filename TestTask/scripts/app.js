@@ -28,17 +28,9 @@
         mainRegion: "#content"
     });
 
-    $(document).ready(function () {
-        App.addInitializer(function (options) {
-            var notesView = new NotesView({ collection: new Notes([], options) });
-            App.mainRegion.show(notesView);
-        });
-
-        var options = {
-            noteService: 'http://ecorougenotes.apiary-mock.com/notes'
-        };
-
-        App.start(options);
+    App.addInitializer(function (options) {
+        var notesView = new NotesView({ collection: new Notes([], options) });
+        App.mainRegion.show(notesView);
     });
 
     return App;

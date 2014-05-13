@@ -26,6 +26,9 @@
     }
 });
 
-require(['app'], function (app) {
-    
+require(['app'], function (App) {
+    var options = {
+        noteService: 'http://ecorougenotes.apiary-mock.com/notes'
+    };
+    App.start(options);
 });
