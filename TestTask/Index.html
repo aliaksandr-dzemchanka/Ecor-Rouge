@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Test Task</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script data-main="/scripts/app.require.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
+</head>
+<body>
+    <script type="text/template" id="notes-template">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="results">
+        </tbody>
+        <tfoot>
+            <tr class="no-results">
+                <td colspan="4">
+                    There are no notes...
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><a href="#" class="add">Add note</a></td>
+            </tr>
+        </tfoot>
+    </script>
+
+    <script type="text/template" id="note-template">
+        <td><%= id %></td>
+        <td><%= _.escape(title) %></td>
+        <td><a href="#" class="edit">Edit</a></td>
+        <td><a href="#" class="delete">Delete</a></td>
+    </script>
+
+    <script type="text/template" id="create-edit-note-template">
+        <div class="note-popup">
+            <% if (editable) { %>
+                <span>Enter note:</span>
+            <br />
+            <textarea class="newNote"><%= _.escape(note.get('title')) %></textarea>
+            <% } else { %>
+                <span>Note:</span>
+            <br />
+            <span><%= _.escape(note.get('title')) %></span>
+            <% } %>
+        </div>
+    </script>
+
+    <div id="content"></div>
+</body>
+</html>
