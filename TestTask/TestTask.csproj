@@ -37,9 +37,16 @@
   <ItemGroup>
     <Content Include="Index.html" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\app.require.js" />
+    <Content Include="scripts\views\notes-view.js" />
+    <Content Include="scripts\views\note-view.js" />
+    <Content Include="scripts\views\note-popup-view.js" />
+    <Content Include="scripts\models\note-popup.js" />
+    <Content Include="scripts\collections\notes.js" />
+    <Content Include="scripts\models\note.js" />
+    <Content Include="styles\main.css" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="styles\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

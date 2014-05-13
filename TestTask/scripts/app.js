@@ -1,9 +1,7 @@
 ﻿define([
         'backbone',
-        './views/notes-view',
-        './collections/notes',
         'marionette'
-], function (Backbone, NotesView, Notes) {
+], function (Backbone) {
     var App = new Backbone.Marionette.Application();
 
     App.vent.on("error:popup", function (html, options) {
@@ -29,8 +27,10 @@
     });
 
     App.addInitializer(function (options) {
-        var notesView = new NotesView({ collection: new Notes([], options) });
-        App.mainRegion.show(notesView);
+        require(['./views/notes-view', './collections/notes'], function (NotesView, Notes) {
+            var notesView = new NotesView({ collection: new Notes([], options) });
+            App.mainRegion.show(notesView);
+        });
     });
 
     return App;

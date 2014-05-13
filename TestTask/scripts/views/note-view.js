@@ -47,8 +47,8 @@
                                     $(popup).dialog("close");
                                     return;
                                 }
-
-                                that.model.save({}, {
+                                editView.model.get('note').save({}, {
+                                    url: that.model.collection.url,
                                     wait: true,
                                     success: function (model) {
                                         for (var field in model.changed)

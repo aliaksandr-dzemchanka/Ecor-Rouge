@@ -7,7 +7,7 @@
             title: ''
         },
         sync: function (method, model, options) {
-            if (method == 'update') {
+            if (method == 'update' && this.collection) {
                 if (!options) {
                     options = {};
                     arguments[2] = options;
